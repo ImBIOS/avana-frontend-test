@@ -7,11 +7,9 @@ const toggleSlice = createSlice({
   reducers: {
     showToggle: (state, action) => {
       state[action.payload] = true;
-      console.log(state);
     },
     hideToggle: (state, action) => {
       state[action.payload] = false;
-      console.log(state);
     },
   },
 });
