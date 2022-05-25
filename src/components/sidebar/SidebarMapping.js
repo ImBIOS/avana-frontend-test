@@ -35,7 +35,7 @@ export default function SidebarMapping({ data }) {
 
             {item.childs && (
               <div
-                className="p-2 max-h-[30vh] overflow-y-auto"
+                className="max-h-[20vh] overflow-y-auto"
                 hidden={!isOpen[item.id]}
               >
                 {item.childs.map((child) => (
@@ -43,7 +43,7 @@ export default function SidebarMapping({ data }) {
                     <a
                       key={child.id}
                       href={child.id}
-                      className={`flex justify-between items-center py-2.5 my-4 px-4 border-b opacity-50 transition duration-200 hover:bg-lightgrey hover:text-white ${
+                      className={`flex justify-between items-center py-2.5 my-4 px-4 border-b-2 border-gray-500 opacity-50 transition duration-200 hover:bg-lightgrey hover:text-white ${
                         pathname.startsWith(`/${child.id}`) &&
                         "bg-lightgrey text-white font-bold"
                       }`}
