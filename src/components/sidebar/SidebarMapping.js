@@ -39,9 +39,8 @@ export default function SidebarMapping({ data }) {
                 hidden={!isOpen[item.id]}
               >
                 {item.childs.map((child) => (
-                  <Toggle id={child.id} toggle={child}>
+                  <Toggle key={child.id} id={child.id} toggle={child}>
                     <a
-                      key={child.id}
                       href={child.id}
                       className={`flex justify-between items-center py-2.5 my-4 px-4 border-b-2 border-gray-500 opacity-50 transition duration-200 hover:bg-lightgrey hover:text-white ${
                         pathname.startsWith(`/${child.id}`) &&
