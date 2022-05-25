@@ -22,7 +22,7 @@ export default function SidebarMapping({ data }) {
 
             {item.childs && (
               <>
-                <div className="rounded p-2">
+                <div className="rounded p-2" hidden>
                   {item.childs.map((child) => (
                     <a
                       key={child.id}
