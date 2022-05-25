@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function Restricted({ children }) {
-  const prompt = alert("You are not allowed to use this feature.");
+  const prompt = () => alert("Not allowed!");
   return (
-    <div className="pointer-events-none" onClick={prompt}>
-      {children}
+    <div onClick={prompt}>
+      <div className="pointer-events-none opacity-25">{children}</div>
     </div>
   );
 }
