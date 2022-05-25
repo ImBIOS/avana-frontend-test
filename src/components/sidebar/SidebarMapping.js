@@ -1,6 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function SidebarMapping({ data }) {
   const pathname = window.location.pathname || "/";
@@ -9,34 +9,33 @@ export default function SidebarMapping({ data }) {
       {data.map((item) => {
         return (
           <div key={item.id}>
-            <a
-              key={item.id}
-              href={!item.childs ? item.id : undefined}
-              className={`flex justify-between items-center my-4 py-2.5 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white ${
-                pathname.startsWith(item.id) && "bg-blue-500"
-              } ${item.childs && "bg-lightbg-secondary my-0 font-bold"}`}
-            >
-              <span className="align-middle ml-2">{item.title}</span>
-              {item.childs && <FaChevronDown />}
-            </a>
+            <Link to={!item.childs ? item.id : "#"}>
+              <div
+                key={item.id}
+                className={`flex justify-between items-center my-4 py-2.5 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white ${
+                  pathname.startsWith(item.id) && "bg-blue-500"
+                } ${item.childs && "bg-lightbg-secondary my-0 font-bold"}`}
+              >
+                <span className="align-middle ml-2">{item.title}</span>
+                {item.childs && <FaChevronDown />}
+              </div>
+            </Link>
 
             {item.childs && (
-              <>
-                <div className="rounded p-2" hidden>
-                  {item.childs.map((child) => (
-                    <a
-                      key={child.id}
-                      href={child.id}
-                      className={`flex justify-between items-center py-2.5 my-4 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white ${
-                        pathname.startsWith(child.id) &&
-                        "bg-blue-500 text-white font-bold"
-                      }`}
-                    >
-                      <span className="align-middle ml-2">{child.title}</span>
-                    </a>
-                  ))}
-                </div>
-              </>
+              <div className="rounded p-2" hidden>
+                {item.childs.map((child) => (
+                  <a
+                    key={child.id}
+                    href={child.id}
+                    className={`flex justify-between items-center py-2.5 my-4 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white ${
+                      pathname.startsWith(child.id) &&
+                      "bg-blue-500 text-white font-bold"
+                    }`}
+                  >
+                    <span className="align-middle ml-2">{child.title}</span>
+                  </a>
+                ))}
+              </div>
             )}
           </div>
         );
