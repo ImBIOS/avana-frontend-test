@@ -13,12 +13,14 @@ function App() {
       <div className="grow text-center border border-white bg-lightgrey">
         <Routes>
           <Route path="*" element={<NotFound />} />
-          <Route exact path="/" element={<Dashboard />} />
+          <Route exact path={homePathname} element={<Dashboard />} />
           <Route path="about" element={<About />} />
         </Routes>
       </div>
     </DashboardLayout>
   );
 }
+
+export const homePathname = "/dashboard";
 
 export default App;
