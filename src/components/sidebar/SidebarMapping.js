@@ -3,16 +3,17 @@ import React from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function SidebarMapping({ data }) {
+  const pathname = window.location.pathname || "/";
   return (
     <nav>
       {data.map((item) => {
         return (
-          <>
+          <div key={item.id}>
             <a
               key={item.id}
               href={!item.childs ? item.id : undefined}
               className={`flex justify-between items-center my-4 py-2.5 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white ${
-                window.location.pathname.startsWith(item.id) && "bg-blue-500"
+                pathname.startsWith(item.id) && "bg-blue-500"
               } ${item.childs && "bg-lightbg-secondary my-0 font-bold"}`}
             >
               <span className="align-middle ml-2">{item.title}</span>
@@ -27,7 +28,7 @@ export default function SidebarMapping({ data }) {
                       key={child.id}
                       href={child.id}
                       className={`flex justify-between items-center py-2.5 my-4 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white ${
-                        window.location.pathname.startsWith(child.id) &&
+                        pathname.startsWith(child.id) &&
                         "bg-blue-500 text-white font-bold"
                       }`}
                     >
@@ -37,7 +38,7 @@ export default function SidebarMapping({ data }) {
                 </div>
               </>
             )}
-          </>
+          </div>
         );
       })}
     </nav>
