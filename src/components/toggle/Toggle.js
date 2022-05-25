@@ -10,9 +10,9 @@ const search = (key, inputArray) => {
 };
 
 export default function Toggle({ id, children }) {
-  const toggle = useSelector((state) => state.toggles) ?? false;
-  const isShowed = search(id, toggle)?.isShowed;
-  const isAllowed = search(id, toggle)?.isAllowed;
+  const toggle = useSelector((state) => search(id, state.toggles)) ?? false;
+  const isShowed = toggle?.isShowed;
+  const isAllowed = toggle?.isAllowed;
 
   if (isShowed && isAllowed) {
     return children;
