@@ -8,7 +8,6 @@ module.exports = {
         lightgrey: "#373737",
         brightfont: "#E8E8E8",
         mediumfont: "#D3D3D3",
-        lightfont: "#6E6E6E",
       },
     },
   },
