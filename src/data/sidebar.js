@@ -34,12 +34,12 @@ const sidebar = [
       },
     ],
   },
-  { id: "orders", isShowed: true, isAllowed: true, title: "Orders" },
+  { id: "orders", isShowed: true, isAllowed: true, title: "My Orders" },
   {
     id: "products",
     isShowed: true,
     isAllowed: true,
-    title: "Products",
+    title: "My Product",
     childs: [
       {
         id: "product-allproduct",
