@@ -7,5 +7,5 @@ export default function NotFound() {
   useEffect(() => {
     navigate(homePathname, { replace: true });
   }, [navigate]);
-  return <div>NotFound</div>;
+  return <>NotFound</>;
 }
