@@ -1,4 +1,4 @@
-const sidebar = [
+const initialSidebarState = [
   { id: "dashboard", isShowed: true, isAllowed: true, title: "Dashboard" },
   {
     id: "hq",
@@ -83,7 +83,7 @@ const sidebar = [
     title: "Webstore",
     childs: [
       {
-        id: "settings",
+        id: "webstore-settings",
         isShowed: true,
         isAllowed: true,
         title: "Settings",
@@ -148,7 +148,7 @@ const sidebar = [
             id: "home-page-product-display",
             isShowed: true,
             isAllowed: false,
-            title: "Home Page Product Display",
+            title: "Product Display",
           },
           {
             id: "show-filter-control",
@@ -416,4 +416,4 @@ const sidebar = [
   },
 ];
 
-export default sidebar;
+export default initialSidebarState;
