@@ -1,8 +1,7 @@
-import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import DashboardLayout from "./layout/DashboardLayout";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import NotFound from "./pages/NotFound";
 import Orders from "./pages/Orders";
 import AllProduct from "./pages/AllProduct";
