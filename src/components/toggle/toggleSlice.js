@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import initialSidebarState from "../../data/sidebar";
 import accessNestedChild from "../../helper/accessNestedChild";
-import searchOrder from "../../helper/searchOrder";
 import searchOrderRecursively from "../../helper/searchOrderRecursively";
 
 const initialState = initialSidebarState;
