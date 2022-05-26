@@ -5,6 +5,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import NotFound from "./pages/NotFound";
 import Orders from "./pages/Orders";
 import AllProduct from "./pages/AllProduct";
+import { homePathname } from "./data/constant";
 
 function App() {
   return (
@@ -21,7 +22,5 @@ function App() {
     </DashboardLayout>
   );
 }
-
-export const homePathname = "/dashboard";
 
 export default App;
