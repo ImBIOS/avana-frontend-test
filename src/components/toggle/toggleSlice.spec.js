@@ -1,7 +1,12 @@
 import initialSidebarState from "../../data/sidebar";
 import accessNestedChild from "../../helper/accessNestedChild";
 import searchOrderRecursively from "../../helper/searchOrderRecursively";
-import toggleReducer, { hideToggle, showToggle } from "./toggleSlice";
+import toggleReducer, {
+  activate,
+  deactivate,
+  hideToggle,
+  showToggle,
+} from "./toggleSlice";
 
 describe("toggle reducer", () => {
   const testState = { id: "test-id", isShowed: true, isAllowed: true };
@@ -35,6 +40,32 @@ describe("toggle reducer", () => {
       testValue,
       testState.id
     ).isShowed;
+
+    expect(expectedValue).toEqual(false);
+  });
+
+  it("should handle activate", () => {
+    const actual = toggleReducer(initialState, activate(testState.id));
+
+    const testValue = searchOrderRecursively(testState.id, actual);
+    const expectedValue = accessNestedChild(
+      actual,
+      testValue,
+      testState.id
+    ).isAllowed;
+
+    expect(expectedValue).toEqual(true);
+  });
+
+  it("should handle deactivate", () => {
+    const actual = toggleReducer(initialState, deactivate(testState.id));
+
+    const testValue = searchOrderRecursively(testState.id, actual);
+    const expectedValue = accessNestedChild(
+      actual,
+      testValue,
+      testState.id
+    ).isAllowed;
 
     expect(expectedValue).toEqual(false);
   });
