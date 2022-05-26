@@ -18,10 +18,12 @@ const toggleSlice = createSlice({
       accessNestedChild(state, orderArray, action.payload).isShowed = false;
     },
     activate: (state, action) => {
-      state[searchOrder(action.payload, state)].isAllowed = true;
+      const orderArray = searchOrderRecursively(action.payload, state);
+      accessNestedChild(state, orderArray, action.payload).isAllowed = true;
     },
     deactivate: (state, action) => {
-      state[searchOrder(action.payload, state)].isAllowed = false;
+      const orderArray = searchOrderRecursively(action.payload, state);
+      accessNestedChild(state, orderArray, action.payload).isAllowed = false;
     },
   },
 });
