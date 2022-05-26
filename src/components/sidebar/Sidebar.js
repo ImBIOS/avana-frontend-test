@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { profileImage, username } from "../../data/constant";
 import { selectToggle } from "../toggle/toggleSlice";
 import SidebarMapping from "./SidebarMapping";
 
@@ -13,11 +14,11 @@ export default function Sidebar() {
       </div>
       <div className="flex flex-col justify-center text-center my-8">
         <img
-          src="/profile.jpeg"
+          src={profileImage}
           alt="logo"
           className="h-16 mx-auto rounded-full"
         />
-        <h1 className="pt-4 font-bold text-brightfont">Imamuzzaki Abu Salam</h1>
+        <h1 className="pt-4 font-bold text-brightfont">{username}</h1>
       </div>
       <SidebarMapping data={sidebar} />
     </div>
