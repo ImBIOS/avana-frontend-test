@@ -1,12 +1,11 @@
 import React from "react";
+import MainViewLayout from "../layout/MainViewLayout";
 
 export default function AllProduct() {
   return (
-    <>
-      <main>
-        <h2>All Product</h2>
-        <p>You will see all product list in this page.</p>
-      </main>
-    </>
+    <MainViewLayout>
+      <h2>All Product</h2>
+      <p>You will see all product list in this page.</p>
+    </MainViewLayout>
   );
 }
