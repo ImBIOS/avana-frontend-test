@@ -27,6 +27,6 @@ test("renders mainview", () => {
       </Router>
     </Provider>
   );
-  const linkElement = screen.getByText(/Dashboard/i);
+  const linkElement = screen.getByText(/My Orders/i);
   expect(linkElement).toBeInTheDocument();
 });
