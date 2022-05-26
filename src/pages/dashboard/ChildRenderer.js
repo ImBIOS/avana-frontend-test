@@ -26,7 +26,7 @@ export default function ChildRenderer({ data }) {
 
     return (
       <h2 key={child.id}>
-        <div className="flex items-center bg-primary text-black opacity-50 justify-between rounded p-2 my-2">
+        <div className="flex items-center bg-lightgrey opacity-80 justify-between rounded p-2 my-2">
           <span>{child.title}</span>
           <span className="hover:cursor-pointer flex gap-8">
             {nested && !isOpen[child.id] && (

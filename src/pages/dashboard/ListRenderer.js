@@ -15,7 +15,7 @@ export default function ListRenderer({ list }) {
   return list.map((item) => (
     <div
       key={item.id}
-      className="flex flex-col gap-4 w-[40%] m-4 p-2 bg-gray-700 rounded-md"
+      className="flex flex-col gap-4 w-[40%] m-4 p-2 bg-darkgrey rounded-md"
     >
       <h1 className="flex justify-between items-center mx-2">
         <span className="font-semibold p-2">{item.title}</span>
